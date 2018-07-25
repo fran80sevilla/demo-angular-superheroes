@@ -2,18 +2,18 @@
     <h5>Todos los Héroes de <small>Marvel y DC registrados</small></h5>
     <h6>{{getServicio()}}</h6>
     <div class="card-columns">
-        <!-- aqui va el componente HeroeTarjetaComponent. Entre corchetes indicamos el nombre
-        de la propiedad, y el valor es la variable que le vamos a enviar-->
+        <!-- aqui referenciamos el componente HeroeTarjetaComponent. 
+        Entre corchetes indicamos el nombre de la propiedad, y el valor es la variable 
+        que le vamos a enviar -->
         <app-heroe-tarjeta [heroes]="item" [indice]="i" *ngFor="let item of obtenerHeroes() ; let i = index"></app-heroe-tarjeta>
     </div>
-    <!--  -->
 
     <!-- <div class="card-columns">
         <div class="card" *ngFor="let heroes of obtenerHeroes(), let indice = index"> -->
     <!-- src="../../../assets/img/ en el array tenemos la ruta completa-->
     <!-- esta ruta tamb la reconoce [src] = "heroes.img" -->
     <!-- <img class="card-img-top" src="assets/img/aquaman.png" alt="Card image cap"> -->
-    <!--             <img class="card-img-top" src="{{heroes.img}}" [alt]="heroes.img">
+    <!-- <img class="card-img-top" src="{{heroes.img}}" [alt]="heroes.img">
             <div class="card-body text-center">
                 <h6>{{ indice + 1 }} {{ heroes.nombre }}</h6>
                 <p class="card-text">{{ heroes.casa }}</p>

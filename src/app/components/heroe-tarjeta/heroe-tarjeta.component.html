@@ -9,6 +9,8 @@
             <!-- propiedad today declarada en el componente heroes.component -->
             <small class="text-muted">{{ today | date:'fullDate' }}</small>
         </p>
+        <!-- funciona la primera . Falta indicarle al componente gestor de la tarjeta
+        comun el nombre de la variable que le vamos a enviar a su propiedad -->
         <a [routerLink]="['/heroe-individual', indice]" class="btn btn-block" [ngClass]="heroes.casa == 'DC' ? 'btn-outline-info' : 'btn-outline-warning'">Ver más...</a>
         <button type="button" (click)="capturarId(indice)" class="btn btn-block" [ngClass]="heroes.casa == 'DC' ? 'btn-outline-info' : 'btn-outline-warning'">Botón</button>
     </div>

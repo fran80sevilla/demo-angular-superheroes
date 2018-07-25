@@ -8,9 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './heroes.component.html'
 })
 export class HeroesComponent implements OnInit {
-  /**
-   * Declaramos el servicio en el param del constructor
-   */
+
   public texto_heroes: string;
   public today: number = Date.now();
 
@@ -26,11 +24,6 @@ export class HeroesComponent implements OnInit {
     let texto = this._heroesService.texto;
     return texto;
   }
-  // llamamos al servicio que nos da la hora actual
-  /*   public obtenerHoraService(){
-      let hora:number = this._relojService.accesoHoraService();
-      return hora;
-    } */
 
   ngOnInit() {
     console.log(`Imprimimos la propiedad del servicio: ${this._heroesService.texto}.`);
@@ -43,23 +36,14 @@ export class HeroesComponent implements OnInit {
   }
 
   /**
- * 
+ * redireccionamos mandando como parametro el indice del elemento de arrayHeroes
  * @param indice del elemento a capturar en la URL
  */
   public capturarId(indice: number) {
-    // se pone la barra para que no se tome como un subdirectorio de heroes.component.html
+    // ponemos la barra para que no se tome como un subdirectorio de heroes.component.html
     // el indice es el parametro que enviamos a traves de la URL
     this._router.navigate(['/heroe-individual', indice]);
     // vemos el index que vamos tocando en el DOM
     console.log(indice);
   }
-
-  public array = [
-    {
-      nombre: 'percha', camisa: 'raida'
-    },
-    {
-      nombre: 'calamidad', camisa: 'raida2'
-    }];
-
 }

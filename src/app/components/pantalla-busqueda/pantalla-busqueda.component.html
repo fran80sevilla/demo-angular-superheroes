@@ -9,7 +9,7 @@
 <div class="animated fadeIn fast" [style.padding]="'10px'">
     <!-- en esta parte vamos a llamar a la etiqueta padre -->
     <div class="card-columns">
-        <app-heroe-tarjeta [heroes]="item" *ngFor="let item of arrayHeroe, let indice = index">
+        <app-heroe-tarjeta [indice]="indice" [heroes]="item" *ngFor="let item of arrayHeroe, let indice = index">
 
         </app-heroe-tarjeta>
     </div>

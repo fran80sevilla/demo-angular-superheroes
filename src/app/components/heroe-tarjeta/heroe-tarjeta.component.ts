@@ -8,6 +8,11 @@ import { Component, OnInit, Input } from '@angular/core';
 export class HeroeTarjetaComponent implements OnInit {
  
   @Input() heroes:any = {};
+  @Input() today:number;
+  @Input() indice:number;
+  @Input() capturarId(idx){
+    this.indice = idx;
+  }
  /*  @Input() obtenerHeroes(){
     return this.heroes;
   };   */

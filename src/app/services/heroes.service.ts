@@ -4,12 +4,13 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class HeroesService implements IHeroes{
 
-    public texto:string = 'Texto desde el servicio'; 
+    public texto:string = 'Probamos si funciona el servicio'; 
     nombre:string;
     bio:string;
     img:string;          
     aparicion:string;
     casa:string;
+
     private heroes_array:IHeroes[] = [
         {
           nombre: "Aquaman",
@@ -84,10 +85,10 @@ export class HeroesService implements IHeroes{
     public buscarHeroe( palabra:string ):IHeroes[]{
       // a este array le iremos aniadiendo los values que vamos capturando del input de busqueda
       let arrayHeroes:IHeroes[] = [];
-      // lo que sea que estamos recibiendo lo debemos pasar a minusculas
+      // lo que recibamos lo debemos pasar a minusculas
       palabra = palabra.toLowerCase();
 
-      // Iteramos nuestro array para ver si hay coincidencias con la palabra
+      // Otro modo de hacerlo
 /*       for(let item of this.heroes_array){
         let nombre = item.nombre.toLowerCase();
         if (nombre.indexOf(palabra)) {
@@ -98,9 +99,10 @@ export class HeroesService implements IHeroes{
       this.getHeroesService().forEach(element => {
         // pasamos a minusculas los nombres de los heroes asignandolos una variable local
         let nombre = element.nombre.toLowerCase();
-        // devuelve 0 o la posicion superior si encuentra coincidencia en los strings, si no -1
+        // devuelve 0 o la posicion superior si encuentra coincidencia en los strings, 
+        // si no -1
         if (nombre.indexOf(palabra) >= 0) {
-          // // agregamos el objeto coincidente
+          // agregamos el objeto coincidente
           arrayHeroes.push(element);
         }
       });

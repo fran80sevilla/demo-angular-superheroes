@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand catamaran-font" href="#">SUPERHEROES</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <!-- hay que realizar una busqueda desde el input del navbar. Primero hay que capturar
+la palabra que introducimos por medio del evento (click) pasandole una funcion con .value
+o algo asi. Probaremos con un console.log() . Después vamos a la logica de nuestro componente
+heroe.service.ts y creamos la funcion correspondiente. Pero primero vamos a resolver el tema
+de la interface, que da error. -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <!-- fragmento que hemos insertado para poner imagenes en el navbar -->
+            <li class="nav-item">
+                <a class="navbar-brand" [routerLink]="['heroes']">
+                    <img src="/assets/img/A-64.png" width="30" height="30" class="d-inline-block align-top" alt="imagen web">
+                </a>
+            </li>
+            <li class="nav-item active" routerLinkActive="active">
+                <!-- como no existe, nos redirecciona a la ruta por default de routes.component -->
+                <a class="nav-link" [routerLink]="['home']">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['heroes']">Héroes</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['about-us']">Sobre Nosotros</a>
+            </li>
+
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="buscar héroes..." aria-label="Busqueda" (keyup.enter)="buscarHeroe(buscarTexto.value)" #buscarTexto>
+            <!-- BUSCADOR DE  HEROES tras la busqueda vamos a capturar los ids del array heroes
+            coincidentes. No ponemos la barra delante para que nos redireccione a la
+            un subdirectorio de app-navbar -->
+            <button [routerLink]="['pantalla-busqueda', 'palabra']" class="btn btn-outline-primary my-2 my-sm-0" type="button" (click)="buscarHeroe(buscarTexto.value)">Buscar Héroe</button>
+        </form>
+    </div>
+</nav>

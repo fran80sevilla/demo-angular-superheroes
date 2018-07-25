@@ -1,0 +1,32 @@
+<div class="animated fadeIn fast" [style.padding]="'10px'">
+    <h5>Héroes de <small>Marvel y DC</small></h5>
+    <h5>{{getServicio()}}</h5>
+    <!-- <h5>{{texto_heroes}}</h5> -->
+    <!-- customizamos el card de B4 de tarjetas como en Pintrest. Usaremos la tercera
+    de las cards-columns -->
+    <div class="card-columns">
+        <!-- a partir de la siguiente linea se repite el diseño, variables y datos en 
+        distintos componentes.  -->
+        <div class="card" *ngFor="let heroes of obtenerHeroes(), let indice = index">
+            <!-- src="../../../assets/img/ en el array tenemos la ruta completa-->
+            <!-- esta ruta relativa tamb la pilla [src] = "heroes.img" -->
+            <!-- <img class="card-img-top" src="assets/img/aquaman.png" alt="Card image cap"> -->
+            <img class="card-img-top" src="{{heroes.img}}" [alt]="heroes.img">
+            <div class="card-body text-center">
+                <h6>{{ indice + 1 }} {{ heroes.nombre }}</h6>
+                <!-- <h5>{{obtenerHeroes()[3].nombre}}</h5> -->
+                <p class="card-text">{{ heroes.casa }}</p>
+                <p class="card-text"><small class="text-muted">{{ heroes.bio }}</small></p>
+
+                <p class="card-text"><small class="text-muted">{{ today | date:'fullDate' }}</small></p>
+                <a [routerLink]="['/heroe-individual', indice]" class="btn btn-block" [ngClass]="heroes.casa == 'DC' ? 'btn-outline-info' : 'btn-outline-warning'">Ver más...</a>
+                <button type="button" (click)="capturarId(indice)" class="btn btn-block" [ngClass]="heroes.casa == 'DC' ? 'btn-outline-info' : 'btn-outline-warning'">Botón</button>
+            </div>
+        </div>
+    </div>
+    <!--     <div class="card-columns">
+        <ul>
+            <li *ngFor="let arrays of array">{{ arrays.nombre }} {{arrays.camisa}}</li>
+        </ul>
+    </div> -->
+</div>

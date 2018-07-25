@@ -1,0 +1,40 @@
+<div class="container animated fadeIn fast" [ngStyle]="{'margin-bottom': '2%'}">
+    <h6>Héroe seleccionado: {{ heroe.nombre }}</h6>
+    <div class="row">
+        <!-- Columna 1 -->
+        <div class="col-sm">
+            <img class="img-circle" src="{{heroe.img}}" [alt]="heroe.img">
+            <hr>
+            <!-- poner barra para que no se tome como un subdirectorio al redireccionar -->
+            <a [routerLink]="['/heroes']" [ngClass]="heroe.casa == 'DC' ? 'btn-outline-info' : 'btn-outline-danger'" class="btn btn-block">Volver a Heroes</a>
+        </div>
+        <!-- Columna 2 -->
+        <div class="col-sm">
+            <div class="list-group">
+                <li class="list-group-item list-group-item-primary">
+                    <div class="d-flex w-100 justify-content-center">
+                        <h5 class="">{{ heroe.nombre }}</h5>
+                    </div>
+                </li>
+
+                <li class="list-group-item list-group-item-action flex-column align-items-start" [ngClass]="heroe.casa == 'DC' ? 'text-info' : 'text-danger'">
+                    <p class="mb-1">{{ heroe.bio }}</p>
+                    <div *ngIf="heroe.casa == 'DC'">
+                        <div>
+                            <img class="img-fluid" width="120" height="120" src="../../../assets/img/dc.jpg" alt="imagen DC">
+                        </div>
+                        <!-- <img [ngClass]="heroe.casa == 'DC' ? 'casa-dc' : 'casa-marvel'" src="" alt=""> -->
+
+                    </div>
+                    <div *ngIf="heroe.casa == 'Marvel'">
+                        <div>
+                            <img class="img-fluid" width="120" height="120" src="../../../assets/img/marvel.jpg" alt="imagen DC">
+                        </div>
+                    </div>
+                    <small>{{ heroe.casa }}</small>
+                </li>
+                <p class="mt-2 text-right"><small>Año de aparición: {{ heroe.aparicion | date }}</small></p>
+            </div>
+        </div>
+    </div>
+</div>

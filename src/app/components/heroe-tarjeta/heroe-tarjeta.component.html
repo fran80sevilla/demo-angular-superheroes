@@ -1,0 +1,13 @@
+<!-- *ngFor="let heroes of obtenerHeroes(), let indice = index" -->
+<div class="card">
+    <img class="card-img-top" src="{{heroes.img}}" [alt]="heroes.img">
+    <div class="card-body text-center">
+        <h6>{{ heroes.nombre }}</h6>
+        <p class="card-text">{{ heroes.casa }}</p>
+        <p class="card-text"><small class="text-muted">{{ heroes.bio }}</small></p>
+
+        <!-- <p class="card-text"><small class="text-muted">{{ today | date:'fullDate' }}</small></p> -->
+        <!-- <a [routerLink]="['/heroe-individual', indice]" class="btn btn-block" [ngClass]="heroes.casa == 'DC' ? 'btn-outline-info' : 'btn-outline-warning'">Ver más...</a>
+        <button type="button" (click)="capturarId(indice)" class="btn btn-block" [ngClass]="heroes.casa == 'DC' ? 'btn-outline-info' : 'btn-outline-warning'">Botón</button> -->
+    </div>
+</div>

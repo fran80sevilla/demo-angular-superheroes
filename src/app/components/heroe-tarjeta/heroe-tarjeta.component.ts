@@ -15,6 +15,7 @@ export class HeroeTarjetaComponent implements OnInit {
 
   capturarId(idx){
     this.indice = idx;
+    // tambien podria hacerse con @Output y EventEmitter
     this._router.navigate(['/heroe-individual', idx]);
   }
 

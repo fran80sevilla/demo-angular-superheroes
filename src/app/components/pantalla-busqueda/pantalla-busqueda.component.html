@@ -2,7 +2,10 @@
     <!-- en esta parte vamos a llamar a la etiqueta padre -->
     <div class="card-columns">
         <app-heroe-tarjeta [indice]="indice" [heroes]="item" *ngFor="let item of arrayHeroe, let indice = index">
-
+            <div *ngIf="arrayHeroe.length <= 0">
+                <p class="alert alert-dark">La búsqueda no ha dado resultados</p>
+            </div>
         </app-heroe-tarjeta>
     </div>
+
 </div>

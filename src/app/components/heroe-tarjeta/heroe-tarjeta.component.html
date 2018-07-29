@@ -3,14 +3,16 @@
     <div class="card-body text-center">
         <h6>{{ heroes.nombre }}</h6>
         <p class="card-text">{{ heroes.casa }}</p>
-        <p class="card-text"><small class="text-muted">{{ heroes.bio }}</small></p>
+        <p class="card-text"><small class="text-muted">{{ heroes.bio | slice: 0:200 }}...</small>
+            <!-- <span class="small ml-4">Leer Más...</span> -->
+        </p>
+
 
         <p class="card-text">
             <!-- propiedad today declarada en el componente heroes.component -->
             <small class="text-muted">{{ today | date:'fullDate' }}</small>
         </p>
-        <!-- funciona la primera . Falta indicarle al componente gestor de la tarjeta
-        comun el nombre de la variable que le vamos a enviar a su propiedad -->
+
         <a [routerLink]="['/heroe-individual', indice]" class="btn btn-block" [ngClass]="heroes.casa == 'DC' ? 'btn-outline-info' : 'btn-outline-warning'">Ver más...</a>
         <button type="button" (click)="capturarId(indice)" class="btn btn-block" [ngClass]="heroes.casa == 'DC' ? 'btn-outline-info' : 'btn-outline-warning'">Botón</button>
     </div>

@@ -60,6 +60,13 @@ export class HeroesService implements IHeroes{
           img: "assets/img/wolverine.png",
           aparicion: "1974-11-01",
           casa: "Marvel"
+        },
+        {
+          nombre: "Iron-Man",
+          bio: "'Tony' Stark es un multimillonario industrial e inventor. Él dirige Industrias Stark, originalmente iniciada por su padre, Howard Stark. Tony crea una armadura para convertirse en el invencible superhéroe Iron Man. Stark sigue siendo humano, con la excepción de su Reactor Ark en su pecho. Uno de los hombres más poderosos, ricos, e inteligentes del Universo Cinematográfico de Marvel. Sin embargo, su poder proviene de su armadura de alta tecnología, la Armadura de Iron Man, la cual le otorga una fuerza y durabilidad sobrehumanas, la habilidad de volar, y un diverso armamento.",
+          img: "assets/img/iron-man2.jpg",
+          aparicion: "1966-01-01",
+          casa: "Marvel"
         }
       ];
 

@@ -1,0 +1,73 @@
+<div class="container">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Variable</th>
+                <th scope="col">Pipe</th>
+                <th scope="col">Resultado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ nombre }}</td>
+                <td>uppercase</td>
+                <td>{{ nombre | uppercase }}</td>
+            </tr>
+            <tr>
+                <td>{{ nombre }}</td>
+                <td>lowercase</td>
+                <td>{{ nombre | lowercase }}</td>
+            </tr>
+            <tr>
+                <td>{{ nombre }}</td>
+                <td>slice:3</td>
+                <td>{{ nombre | slice:3 }}</td>
+            </tr>
+            <tr>
+                <td>{{ nombre }}</td>
+                <td>slice:1:4 (ignora 1º elemento)</td>
+                <td>{{ nombre | slice:1:4 }}</td>
+            </tr>
+            <tr>
+                <td>{{ array }}</td>
+                <td>slice:0:5</td>
+                <td>{{ nombre | slice:0:5 }}</td>
+            </tr>
+            <tr>
+                <td>{{ array }}</td>
+                <td>slice:1:4 (ignora 1º elemento)</td>
+                <td>{{ array | slice:1:4 }}</td>
+            </tr>
+
+            <tr>
+                <td>{{ PI }}</td>
+                <td>DecimalPipe (number)</td>
+                <td>{{ PI | number }}</td>
+            </tr>
+            <tr>
+                <td>{{ PI }}</td>
+                <td>DecimalPipe number:'3.0-0'</td>
+                <td>{{ PI | number:'3.0-0' }}</td>
+            </tr>
+
+            <tr>
+                <td>{{ PI }}</td>
+                <td>DecimalPipe number:'1.0-5'</td>
+                <td>{{ PI | number:'1.0-5' }}</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <hr>
+    <div>
+        <h4>Slice en *ngFor="let item of array | slice:4:20"</h4>
+        <p><strong>No da error</strong> aunque sobrepasemos la longitud del array. Es útil para no mostrar
+            <br>todos los datos en pantalla si así lo deseamos. Ignorará el cuarto elemento y
+            <br>llegará hasta el final del array.
+        </p>
+        <ul>
+            <li *ngFor="let item of array | slice:4:20">{{ item }}</li>
+        </ul>
+    </div>
+</div>

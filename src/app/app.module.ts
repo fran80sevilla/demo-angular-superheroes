@@ -21,6 +21,7 @@ import { HeroeIndividualComponent } from './components/heroe-individual/heroe-in
 import { PantallaBusquedaComponent } from './components/pantalla-busqueda/pantalla-busqueda.component';
 import { PipeFechaPipe } from './pipes/pipe-fecha.pipe';
 import { HeroeTarjetaComponent } from './components/heroe-tarjeta/heroe-tarjeta.component';
+import { EjemplosPipesComponent } from './components/ejemplos-pipes/ejemplos-pipes.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { HeroeTarjetaComponent } from './components/heroe-tarjeta/heroe-tarjeta.
     HeroeIndividualComponent,
     PantallaBusquedaComponent,
     PipeFechaPipe,
-    HeroeTarjetaComponent
+    HeroeTarjetaComponent,
+    EjemplosPipesComponent
   ],
   imports: [
     BrowserModule,

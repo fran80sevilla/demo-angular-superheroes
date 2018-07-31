@@ -9,7 +9,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class ContrasenaPipe implements PipeTransform {
 
-  /** el value es el argumento que nos llega. En este caso el nombre de una persona
+  /** el value es la propiedad a formatear que nos llega. En este caso el nombre de una persona
    * nos devuelve el nombre pasado a asteriscos si el argumento es falso 
    */
   transform(value: string, activarPass: boolean): string {

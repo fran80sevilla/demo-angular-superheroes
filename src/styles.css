@@ -23,6 +23,13 @@ body {
 }
 
 
+/* cifras o celdas pares de la tabla*/
+
+td:nth-child(even) {
+    font-weight: bold;
+}
+
+
 /* fuentes google fonts*/
 
 .nunito-font {

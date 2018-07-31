@@ -1,5 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+// import para implantar el Pipe Hora local(LOCALE_ID)
+import { NgModule, LOCALE_ID } from '@angular/core';
+// hora local espaniola
+import localeEs from '@angular/common/locales/es';
+import { registerLocaleData } from '@angular/common';
+// nueva funcion para el uso local
+registerLocaleData(localeEs);
 
 // Rutas: exportamos de nuestro componente de rutas las constante
 import { APP_ROUTING } from './app.routes';
@@ -19,9 +25,10 @@ import {HeroesService} from './services/heroes.service';
 import {RelojService} from './services/reloj.service';
 import { HeroeIndividualComponent } from './components/heroe-individual/heroe-individual.component';
 import { PantallaBusquedaComponent } from './components/pantalla-busqueda/pantalla-busqueda.component';
-import { PipeFechaPipe } from './pipes/pipe-fecha.pipe';
 import { HeroeTarjetaComponent } from './components/heroe-tarjeta/heroe-tarjeta.component';
 import { EjemplosPipesComponent } from './components/ejemplos-pipes/ejemplos-pipes.component';
+import { CapitalizadoPipe } from './pipes/pipe-capitalizado.pipe';
+import { ContrasenaPipe } from './pipes/contrasena.pipe';
 
 @NgModule({
   declarations: [
@@ -33,16 +40,17 @@ import { EjemplosPipesComponent } from './components/ejemplos-pipes/ejemplos-pip
     FooterComponent,
     HeroeIndividualComponent,
     PantallaBusquedaComponent,
-    PipeFechaPipe,
     HeroeTarjetaComponent,
-    EjemplosPipesComponent
+    EjemplosPipesComponent,
+    CapitalizadoPipe,
+    ContrasenaPipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
     APP_ROUTING
   ],
-  providers: [HeroesService, RelojService],
+  providers: [HeroesService, RelojService, {provide: LOCALE_ID, useValue:'es'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

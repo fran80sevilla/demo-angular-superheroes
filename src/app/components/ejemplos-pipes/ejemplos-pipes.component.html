@@ -56,6 +56,144 @@
                 <td>{{ PI | number:'1.0-5' }}</td>
             </tr>
 
+            <tr>
+                <td>{{ numero }}</td>
+                <td>DecimalPipe number:'.3-4'(muestra todos los enteros)</td>
+                <td>{{ numero | number:'.3-4' }}</td>
+            </tr>
+            <!-- percent -->
+            <tr>
+                <td>{{ numero_decimal }}</td>
+                <td>PipePercent (number*100)</td>
+                <td>{{ numero_decimal | percent }}</td>
+            </tr>
+            <tr>
+                <td>{{ numero_decimal }}</td>
+                <td>PipePercent numero_decimal | percent:'2.3-4'</td>
+                <td>{{ numero_decimal | percent:'2.3-4' }}</td>
+            </tr>
+
+            <tr>
+                <td>{{ salario }}</td>
+                <td>PipeCurrency salario | currency'</td>
+                <td>{{ salario | currency }}</td>
+            </tr>
+
+            <tr>
+                <td>{{ salario }}</td>
+                <td>PipeCurrency salario | currency:'EUR'</td>
+                <td>{{ salario | currency:'EUR' }}</td>
+            </tr>
+
+            <tr>
+                <td>{{ salario }}</td>
+                <td>PipeCurrency salario | currency:'EUR':false</td>
+                <td>{{ salario | currency:'EUR':false }}</td>
+            </tr>
+
+            <tr>
+                <td>{{ salario }}</td>
+                <td>PipeCurrency salario | currency:'EUR':false:'4.0-0'</td>
+                <td>{{ salario | currency:'EUR':false:'4.0-0' }}</td>
+            </tr>
+
+            <tr>
+                <td>{{ salario }}</td>
+                <td>PipeCurrency v.5 salario | currency:'EUR':'symbol':'4.4-5'</td>
+                <td>{{ salario | currency:'EUR':'symbol':'4.3-4' }}</td>
+            </tr>
+            <tr>
+                <td>{{ salario }} (en libras esterlinas)</td>
+                <td>PipeCurrency v.5 salario | currency:'GBP':'symbol-narrow':'.3-4'</td>
+                <td>{{ salario | currency:'GBP':'symbol-narrow':'2.3-4' }}</td>
+            </tr>
+
+            <tr>
+                <td>{{ salario }} (en libras esterlinas)</td>
+                <td>PipeCurrency v.5 salario | currency:'GBP':'symbol':'.3-4'</td>
+                <td>{{ salario | currency:'GBP':'symbol':'.3-4' }}</td>
+            </tr>
+
+            <tr>
+                <td>{{ salario }} (en libras esterlinas)</td>
+                <td>PipeCurrency v.5 salario | currency:'GBP':false:'.3-4'</td>
+                <td>{{ salario | currency:'GBP':false:'.3-4' }}</td>
+            </tr>
+
+            <tr>
+                <td>{{ mi_objeto }}</td>
+                <td>PipeJson mi_objeto | json</td>
+                <td><pre>{{ mi_objeto | json }}</pre></td>
+            </tr>
+
+            <tr>
+                <td>{{ valorPromesa }}</td>
+                <td>Pipe:Async valorPromesa </td>
+                <td><pre>{{ valorPromesa }}</pre></td>
+            </tr>
+
+            <tr>
+                <td>{{ valorPromesa }}</td>
+                <td>Pipe:Async valorPromesa | async</td>
+                <td><pre>{{ valorPromesa | async}}</pre></td>
+            </tr>
+            <!-- FECHAS -->
+            <tr>
+                <td>{{ stringFecha }}</td>
+                <td>Pipe:Date stringFecha | date</td>
+                <td><pre>{{ stringFecha | date }}</pre></td>
+            </tr>
+
+            <tr>
+                <td>{{ stringFecha }}</td>
+                <td>Pipe:Date stringFecha | date: 'medium'</td>
+                <td><pre>{{ stringFecha | date: 'medium' }}</pre></td>
+            </tr>
+
+            <tr>
+                <td>{{ fecha }}</td>
+                <td>Pipe:Date fecha | date</td>
+                <td><pre>{{ fecha | date}}</pre></td>
+            </tr>
+
+            <tr>
+                <td>{{ fecha }}</td>
+                <td>Pipe:Date fecha | date: 'medium'</td>
+                <td><pre>{{ fecha | date: 'medium'}}</pre></td>
+            </tr>
+
+            <tr>
+                <td>{{ fecha }}</td>
+                <td>Pipe:Date fecha | date: 'MMMM - dd'</td>
+                <td>{{ fecha | date: 'MMMM - dd'}}</td>
+            </tr>
+
+            <tr>
+                <td>{{ fecha }}</td>
+                <td>Pipe:Date fecha | date: 'MM-d'</td>
+                <td>{{ fecha | date: 'MM-d'}}</td>
+            </tr>
+            <!-- Mis propios Pipes -->
+            <tr>
+                <td>{{ mi_nombre }}</td>
+                <td>PipeCapitalizado mi_nombre | capitalizado</td>
+                <td>{{ mi_nombre | capitalizado:true }}</td>
+            </tr>
+            <tr>
+                <td>{{ mi_nombre }}</td>
+                <td>PipeCapitalizado mi_nombre | capitalizado:false</td>
+                <td>{{ mi_nombre | capitalizado:false }}</td>
+            </tr>
+            <!-- tarea boton Pipe personalizado -->
+            <tr>
+                <td>{{ nombre }}</td>
+                <td>
+                    <button type="button" (click)="fnActivarBoton()" class="btn btn-outline-info">Activar/Desactivar</button>
+                    <br><br>
+                    <p>nombre | contrasena:{{ activarBoton }}</p>
+                </td>
+                <td>{{ nombre | contrasena:activarBoton }}</td>
+            </tr>
         </tbody>
     </table>
 
